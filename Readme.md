@@ -1,6 +1,6 @@
 [![Circle CI](https://circleci.com/gh/segmentio/snippet.svg?style=svg)](https://circleci.com/gh/segmentio/snippet)
 
-# snippet
+# Snippet
 
   Render the analytics.js snippet.
 
