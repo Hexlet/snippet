@@ -22,7 +22,7 @@ var app = express()
  * Routes.
  */
 
-app.get('/analytics.js/v1/key/analytics.min.js', function (req, res, next) {
+app.get('/analytics.js', function (req, res, next) {
   res.render('analytics.js');
 });
 
@@ -30,8 +30,7 @@ app.get('/snippet-test/:min?', function (req, res, next) {
   var template = req.params.min ? snippet.min : snippet.max;
   res.render('index.html', {
     snippet: template({
-      apiKey: 'key',
-      host: 'localhost:' + port
+      host: '//localhost:' + port + '/analytics.js'
     }),
     min: !! req.params.min
   });

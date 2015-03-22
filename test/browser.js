@@ -37,7 +37,7 @@ describe('snippet', function () {
 
   it('should ignore the snippet when the real analytics is already included', function(){
     var global = {};
-    var ajs = { initialize: function(){} };
+    var ajs = { VERSION: '0.0.0' };
     global.window = global;
     global.analytics = ajs;
     global.console = { error: spy() };
@@ -68,7 +68,7 @@ describe('snippet', function () {
 
   describe('.page', function () {
     it('should call .page by default', function () {
-      assert.deepEqual(window.analytics[0], ['page']);
+      assert.deepEqual(window.analytics[1], ['page']);
     });
   });
 

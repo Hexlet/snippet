@@ -15,13 +15,12 @@ module.exports = function(app){
     if ('/snippet' == this.path) {
       this.type = 'js';
       this.body = snippet.min({
-        apiKey: 'key',
-        host: 'localhost:3000'
+        host: '//localhost:3000/analytics.js'
       });
     }
   
     // analytics.js
-    if ('/analytics.js/v1/key/analytics.min.js' == this.path) {
+    if ('/analytics.js' == this.path) {
       this.type = 'js';
       this.body = 'loaded = true';
     }
