@@ -1,10 +1,8 @@
 
-var express = require('express')
-  , fs = require('fs')
-  , hbs = require('hbs')
-  , path = require('path')
-  , snippet = require('..')
-  , path = require('path');
+var express = require('express'),
+    write = require('fs').writeFileSync,
+    snippet = require('..'),
+    path = require('path');
 
 
 /**
@@ -13,10 +11,7 @@ var express = require('express')
 
 var app = express()
   .use(express.static(__dirname + '/..'))
-  .set('views', __dirname)
-  .engine('html', hbs.__express)
-  .engine('js', hbs.__express);
-
+  .set('views', __dirname);
 
 /**
  * Routes.
@@ -45,6 +40,6 @@ var port = 4321;
 var pid = path.resolve(__dirname, 'pid.txt');
 
 app.listen(port, function () {
-  fs.writeFileSync(pid, process.pid, 'utf-8');
+  write(pid, process.pid, 'utf-8');
   console.log('Listening on ' + port + '...');
 });
