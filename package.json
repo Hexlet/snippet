@@ -7,8 +7,7 @@
     "duo": "^0.8.10",
     "duo-test": "^0.3.12",
     "mocha": "~1.12.1",
-    "should": "~1.2.2",
-    "uglify-js": "~2.4.0"
+    "should": "~1.2.2"
   },
   "main": "lib/index.js",
   "dependencies": {
